@@ -23,7 +23,7 @@
 
 ---
 
-## Peki Savunmada Ne Sorabilirler? (Kendi Kendime Çalışma Notları)
+## Kendi Kendime Çalışma Notları
 
 Akranlarım bana buraları kurcalayarak soru soracak, o yüzden şimdiden hazırlıklı olayım:
 
