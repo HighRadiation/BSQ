@@ -6,7 +6,7 @@
 /*   By: buoksuz@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 01:24:32 by buoksuz           #+#    #+#             */
-/*   Updated: 2026/07/15 01:39:41 by buoksuz          ###   ########.fr       */
+/*   Updated: 2026/07/15 01:42:36 by buoksuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,15 @@ static void	ft_update_max(int r, int c, int size, t_square *max)
 		max->r = r;
 		max->c = c;
 	}
+}
+
+static void	ft_procces_cell(t_map	*map, int **dp, int r, int c, t_square *max)
+{
+	if (map->grid[r][c] == map->obstacle)
+		dp[r][c] = 0;
+	else if (r == 0 || c == 0)
+		dp[r][c] = 1;
+	else
+		dp[r][c] = ft_min_of_three(dp[r - 1][c], dp[r][c - 1], dp[r - 1][c - 1] + 1);
+	ft_update_max(r, c, dp[r][c], max);
 }
