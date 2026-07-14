@@ -2,7 +2,7 @@
 - Verilen alandaki mümkün olan en büyük kareyi hesaplayan ve yazdıran bir program.
 - Bu projenin amacı, engellerden kaçınarak bir harita üzerindeki en büyük kareyi bulmaktır.
 - Haritayı içeren bir dosya sağlanacaktır. Bu dosya, programınıza bir argüman olarak iletilmelidir.
-- The first line of the file contains information on how to read the map:
+- Dosyanın ilk satırı, haritanın nasıl okunacağına dair bilgiler içerir:
 	∗ Haritadaki satır sayısı; geçerli herhangi bir tam sayı olabilir.
 	∗ “Boş” karakter.
 	∗ "Engel" karakteri.
