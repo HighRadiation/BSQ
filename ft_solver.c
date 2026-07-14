@@ -6,13 +6,11 @@
 /*   By: buoksuz@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 01:24:32 by buoksuz           #+#    #+#             */
-/*   Updated: 2026/07/15 01:47:49 by buoksuz          ###   ########.fr       */
+/*   Updated: 2026/07/15 01:57:17 by buoksuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq.h"
-
-
 
 static int	**ft_allocate_dp(int rows, int cols)
 {
