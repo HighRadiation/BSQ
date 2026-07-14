@@ -23,9 +23,7 @@
 
 ---
 
-## Peki Savunmada Ne Sorabilirler? (Kendi Kendime Çalışma Notları)
-
-Akranlarım bana buraları kurcalayarak soru soracak, o yüzden şimdiden hazırlıklı olayım:
+## Kendi Kendime Çalışma Notları
 
 ### - "Neden bsq.h'ta struct'ın sonuna `;` koydun ama diğer yerlerde yok?"
 - Struct tanımlarken derleyiciye "ben yeni bir veri tipi oluşturuyorum" diyorum. C dilinde bu tip tanımlamalarının sonuna `;` koymak zorunlu, yoksa derleyici nerede bittiğini anlamıyor ve doğrudan syntax hatası fırlatıyor. `typedef struct s_map { ... } t_map;` derken o en sondaki noktalı virgül bu yüzden hayati.
