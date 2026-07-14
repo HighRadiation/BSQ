@@ -6,7 +6,7 @@
 /*   By: buoksuz@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 01:24:32 by buoksuz           #+#    #+#             */
-/*   Updated: 2026/07/15 01:38:45 by buoksuz          ###   ########.fr       */
+/*   Updated: 2026/07/15 01:39:41 by buoksuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,14 @@ static int	**ft_allocate_dp(int rows, int cols)
 		i++;
 	}
 	return (dp);
+}
+
+static void	ft_update_max(int r, int c, int size, t_square *max)
+{
+	if (size > max-> size)
+	{
+		max->size = size;
+		max->r = r;
+		max->c = c;
+	}
 }
