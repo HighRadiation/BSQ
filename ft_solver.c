@@ -6,24 +6,13 @@
 /*   By: buoksuz@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 01:24:32 by buoksuz           #+#    #+#             */
-/*   Updated: 2026/07/15 01:46:42 by buoksuz          ###   ########.fr       */
+/*   Updated: 2026/07/15 01:47:49 by buoksuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq.h"
 
-static void	ft_free_dp(int **dp, int rows)
-{
-	int	i;
 
-	i = 0;
-	while (i < rows)
-	{
-		free(dp[i]);
-		i++;
-	}
-	free(dp);
-}
 
 static int	**ft_allocate_dp(int rows, int cols)
 {
