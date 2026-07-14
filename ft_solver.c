@@ -6,7 +6,7 @@
 /*   By: buoksuz@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 01:24:32 by buoksuz           #+#    #+#             */
-/*   Updated: 2026/07/15 01:42:36 by buoksuz          ###   ########.fr       */
+/*   Updated: 2026/07/15 01:45:38 by buoksuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,4 +88,28 @@ static void	ft_procces_cell(t_map	*map, int **dp, int r, int c, t_square *max)
 	else
 		dp[r][c] = ft_min_of_three(dp[r - 1][c], dp[r][c - 1], dp[r - 1][c - 1] + 1);
 	ft_update_max(r, c, dp[r][c], max);
+}
+
+void	ft_solve_bsq(t_map *map)
+{
+	int			*dp;
+	int			r;
+	int			c;
+	t_square	max;
+
+	dp = ft_allocate_dp(map->rows, map->cols);
+	if (!dp)
+		return ;
+	max.size = 0;
+	max.r = 0;
+	max.c = 0;
+	r = -1;
+	while (++r < map->rows)
+	{
+		c = -1;
+		while (++c) < map->cols
+			ft_procces_cell(map, dp, r, c, &max);
+	}
+	ft_draw_and_print(map, max);
+	ft_free_dp(dp, map->rows);
 }
