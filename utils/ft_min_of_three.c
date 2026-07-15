@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_allocate_dp.c                                   :+:      :+:    :+:   */
+/*   ft_min_of_three.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: buoksuz@student.42istanbul.com.tr          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/15 07:34:42 by buoksuz           #+#    #+#             */
-/*   Updated: 2026/07/15 08:00:04 by buoksuz          ###   ########.fr       */
+/*   Created: 2026/07/15 11:01:00 by buoksuz           #+#    #+#             */
+/*   Updated: 2026/07/15 11:01:22 by buoksuz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq.h"
 
-int	**ft_allocate_dp(int rows, int cols)
+int ft_min_of_three(int a, int b, int c)
 {
-	int	**dp;
-	int	i;
+	int min;
 
-	dp = (int **)malloc(sizeof(int *) * rows);
-	if (!dp)
-		return (NULL);
-	i = 0;
-	while (i < rows)
-	{
-		dp[i] = (int *)malloc(sizeof(int) * cols);
-		if (!dp[i])
-		{
-			ft_free_dp(dp, i);
-			return (NULL);
-		}
-		i++;
-	}
-	return (dp);
+	if (a < b)
+		min = a;
+	else
+		min = b;
+	if (c < min)
+		min = c;
+	return (min);
 }

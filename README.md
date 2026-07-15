@@ -70,3 +70,32 @@
   - *TOO_MANY_ARGS Hatasının Çözümü:* Norm kuralına göre bir fonksiyona en fazla 4 parametre gönderebiliyoruz. Burada başta `map`, `dp`, `r`, `c` ve `max` olmak üzere 5 parametre gönderiyordum ve Norm hata verdi. Ben de `r` ve `c` koordinatlarını ayrı ayrı göndermek yerine, zaten elimizde olan `t_square` struct'ından geçici bir `curr` değişkeni oluşturup koordinatları onun içine paketledim. Böylece parametre sayısını 4'e düşürüp Norm kuralına tam uyum sağladım.
 
 - ft_solve_bsq: tüm bu operasyonu yöneten, hafızayı başlatan, döngüyü döndüren, en son ekran çıktısını verip açtığı tüm belleği sisteme geri veren (`free`) ana çözücü fonksiyonumuz.
+
+## Execution Flow
+
+Programın girdiyi alıp ekrana çözümü basana kadar izlediği yol sırasıyla şu şekildedir:
+
+```text
+[ Girdi Kaynağı ]
+(Dosya yolu verilirse open ile dosya açılır, verilmezse standart girdi 'stdin' yani fd 0 kullanılır)
+       │
+       ▼
+   [ main ]
+(read fonksiyonu ile ham harita verisini belleğe okur)
+       │
+       ▼
+ [ ft_parse_map ]
+(İlk satırdaki satır sayısı, boşluk, engel ve doluluk karakterlerini t_map struct'ına kaydeder.
+ Haritanın geri kalanını iki boyutlu dinamik char **grid matrisine yerleştirir)
+       │
+       ▼
+ [ ft_solve_bsq ]
+(Dinamik programlama tablosunu 'int **dp' oluşturur, haritayı tarayarak en büyük kareyi bulur)
+       │
+       ▼
+[ ft_draw_and_print ]
+(Bulunan en büyük kareyi harita üzerinde 'full' karakteri ile doldurur ve haritayı ekrana basar)
+       │
+       ▼
+ [ Bellek Temizliği ]
+(Açılan tüm dinamik bellekler 'free' edilir ve program güvenli bir şekilde sonlanır)
